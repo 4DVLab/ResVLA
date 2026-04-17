@@ -1,14 +1,28 @@
-# ResVLA
+<br>
+<p align="center">
+<h1 align="center"><strong>From Noise to Intent: Anchoring Generative VLA Policies with Residual Bridges</strong></h1>
+  <p align="center">
+      <strong><span style="color: red;">ICML 2026</span></strong>
+    <br>
+   <a href="https://github.com/ymzhong66" target="_blank">Yiming Zhong*</a>&emsp;
+   <a href="" target="_blank">Yaoyu He*</a>&emsp;
+   <a href="" target="_blank">Zemin Yang*</a>&emsp;
+   <a href="" target="_blank">Pengfei Tian</a>&emsp;
+   <a href="" target="_blank">Yifan Huang</a>&emsp;
+   <a href="" target="_blank">Qingqiu Huang</a>&emsp;
+   <a href="" target="_blank">Xinge Zhu</a>&emsp;
+   <a href="https://yuexinma.me" target="_blank">Yuexin Ma</a>&emsp;
+    <br>
+    ShanghaiTech University, Morphic Robotics, The Chinese University of Hong Kong
+    <br>
+    *Indicates Equal Contribution
+    <br>
+  </p>
+</p>
 
-## From Noise to Intent: Anchoring Generative VLA Policies with Residual Bridges
+<p align="center">
+  <a href="https://res-vla.github.io/ResVLA/"><b>📖 Project Page</b></a> |
+  <a href="https://github.com/4DVLab/ResVLA"><b>💻 Code</b></a>
+</p>
 
-**Yiming Zhong<sup>1,*†</sup>**, **Yaoyu He<sup>1,*</sup>**, **Zemin Yang<sup>1,*</sup>**, Pengfei Tian<sup>1</sup>, Yifan Huang<sup>1</sup>, Qingqiu Huang<sup>2</sup>, Xinge Zhu<sup>3</sup>, **Yuexin Ma<sup>1,†</sup>**
-
-<sup>1</sup> ShanghaiTech University, Shanghai, China  
-<sup>2</sup> Morphic Robotics, Shenzhen, China  
-<sup>3</sup> The Chinese University of Hong Kong, Hong Kong, China  
-
-\* Equal contribution  
-† Corresponding authors  
-
-[Project Page](https://res-vla.github.io/ResVLA/) | [Code](https://github.com/4DVLab/ResVLA)
+</div>
