@@ -21,8 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://res-vla.github.io/ResVLA/"><b>📖 Project Page</b></a> |
-  <a href="https://github.com/4DVLab/ResVLA"><b>💻 Code</b></a>
+  <a href="https://res-vla.github.io/ResVLA/"><b>📖 Project Page</b></a> 
 </p>
 
 </div>
