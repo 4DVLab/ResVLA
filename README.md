@@ -2,7 +2,7 @@
 <p align="center">
 <h1 align="center"><strong>From Noise to Intent: Anchoring Generative VLA Policies with Residual Bridges</strong></h1>
   <p align="center">
-      <strong><span style="color: red;"> 2026</span></strong>
+      <strong><span style="color: red;"> ICML 2026</span></strong>
     <br>
    <a href="https://github.com/ymzhong66" target="_blank">Yiming Zhong*</a>&emsp;
    <a href="" target="_blank">Yaoyu He*</a>&emsp;
@@ -23,5 +23,8 @@
 <p align="center">
   <a href="https://res-vla.github.io/ResVLA/"><b>📖 Project Page</b></a> 
 </p>
-
+<p align="center">
+  <strong>Code Release:</strong> We are currently organizing the codebase and uploading the checkpoints. 
+  The full code and checkpoints will be released by the end of May.
+</p>
 </div>
