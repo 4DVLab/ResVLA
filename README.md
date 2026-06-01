@@ -30,7 +30,7 @@
 
 ## 📣 News
 
-- [04/2026] ResVLA has been accepted by ICML 2026 as a Highlight.
+- [04/2026] ResVLA has been accepted by ICML 2026.
 - [06/2026] Code and released checkpoints are available.
 
 ## 📦 Released Assets
