@@ -5,7 +5,8 @@
 ###########################################################################################
 # === Please modify the following paths according to your environment ===
 export LIBERO_HOME=${LIBERO_HOME:-../LIBERO-plus}
-export LIBERO_CONFIG_PATH=${LIBERO_CONFIG_PATH:-${LIBERO_HOME}/config}  # Directory containing LIBERO-plus config.yaml
+export LIBERO_PLUS_CONFIG_PATH=${LIBERO_PLUS_CONFIG_PATH:-${LIBERO_HOME}/config}  # Path to LIBERO-plus config files
+export LIBERO_CONFIG_PATH=${LIBERO_PLUS_CONFIG_PATH}
 export LIBERO_Python=${LIBERO_Python:-python}
 export PYTHONPATH=$PYTHONPATH:${LIBERO_HOME}
 export PYTHONPATH=$(pwd):${PYTHONPATH}
