@@ -28,8 +28,6 @@
 </p>
 </div>
 
-> ResVLA anchors generative vision-language-action policies with low-frequency intent predictions and residual action bridges, improving action generation for long-horizon robotic manipulation.
-
 ## 📣 News
 
 - [04/2026] ResVLA has been accepted by ICML 2026 as a Highlight.
