@@ -22,8 +22,7 @@
 
 <p align="center">
   <a href="https://res-vla.github.io/ResVLA/"><b>📖 Project Page</b></a> |
-  <b>📄 Paper Coming Soon</b> |
-  <a href="https://github.com/4DVLab/ResVLA"><b>💻 Code</b></a> |
+  <a href="https://arxiv.org/pdf/2604.21391"><b>📄 Paper Link</b></a> |
   <a href="https://huggingface.co/GaussionZhong/resvla_libero_all_2B"><b>🤗 LIBERO Checkpoint</b></a> |
   <a href="https://huggingface.co/GaussionZhong/resvla_simpler_env_2B"><b>🤗 SimplerEnv Checkpoint</b></a>
 </p>
@@ -31,20 +30,10 @@
 
 > ResVLA anchors generative vision-language-action policies with low-frequency intent predictions and residual action bridges, improving action generation for long-horizon robotic manipulation.
 
-<div align="center">
-  <img src="examples/LIBERO/example.gif" alt="ResVLA LIBERO rollout example" style="max-width: 90%; height: auto;" />
-</div>
-
 ## 📣 News
 
+- [04/2026] ResVLA has been accepted by ICML 2026 as a Highlight.
 - [06/2026] Code and released checkpoints are available.
-- [06/2026] We provide evaluation recipes for LIBERO, LIBERO-plus, and SimplerEnv.
-
-## 😲 Highlights
-
-- **Residual Bridge policy head.** ResVLA decomposes action generation into intent anchoring and residual refinement.
-- **Released checkpoints.** We release 2B checkpoints for LIBERO and SimplerEnv evaluation.
-- **Reproducible workflows.** The repository includes training scripts, checkpoint metadata, dataset statistics, policy-server deployment, and simulator-side evaluation scripts.
 
 ## 📦 Released Assets
 
@@ -117,48 +106,6 @@ Large checkpoint downloads may appear quiet for several minutes. Check partial f
 
 If you store `Qwen3-VL-2B-Instruct` somewhere else, update `framework.qwenvl.base_vlm` in the checkpoint `config.yaml` or in your training config.
 
-## ✅ Installation Verification
-
-Before installing LIBERO or SimplerEnv simulators, verify that the ResVLA environment, base VLM, checkpoint files, model loading, and websocket policy server are working.
-
-```bash
-python - <<'PY'
-from pathlib import Path
-from resVLA.model.framework.share_tools import read_mode_config
-
-for ckpt in [
-    "results/Checkpoints/resvla_libero_all_2B/checkpoints/resVLA_libero.pt",
-    "results/Checkpoints/resvla_simpler_env_2B/checkpoints/resVLA_simpler_env.pt",
-]:
-    cfg, stats = read_mode_config(Path(ckpt))
-    print(ckpt)
-    print("  framework:", cfg["framework"]["name"])
-    print("  base_vlm:", cfg["framework"]["qwenvl"]["base_vlm"])
-    print("  stats:", list(stats.keys()))
-PY
-```
-
-Start a policy server:
-
-```bash
-CUDA_VISIBLE_DEVICES=0 python deployment/model_server/server_policy.py \
-  --ckpt_path results/Checkpoints/resvla_libero_all_2B/checkpoints/resVLA_libero.pt \
-  --port 18093 \
-  --idle_timeout 120 \
-  --use_bf16
-```
-
-In another terminal:
-
-```bash
-python -m deployment.model_server.tools.debug_server_policy \
-  --host 127.0.0.1 \
-  --port 18093 \
-  --test infer
-```
-
-A successful verification returns `status: ok` and a `normalized_actions` array with shape `(1, 8, 7)` for the LIBERO checkpoint.
-
 ## 📚 Datasets
 
 | Setting | Required datasets | Default directory | Preparation |
@@ -216,15 +163,13 @@ All evaluation workflows use the ResVLA policy server and a separate simulator-s
 
 ## 💓 Acknowledgement
 
-We thank the open-source communities behind [Qwen3-VL](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct), [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO), [LIBERO-plus](https://github.com/sylvestf/LIBERO-plus), [SimplerEnv](https://github.com/simpler-env/SimplerEnv), [LeRobot](https://github.com/huggingface/lerobot), and [OpenVLA](https://github.com/openvla/openvla). This release benefits from their models, benchmarks, datasets, tooling, and prior code.
+We thank the open-source communities behind [Qwen3-VL](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct), [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO), [LIBERO-plus](https://github.com/sylvestf/LIBERO-plus), [SimplerEnv](https://github.com/simpler-env/SimplerEnv), and [StarVLA](https://github.com/starVLA/starVLA). Our codebase is built based on the StarVLA repository, and we sincerely appreciate their contributions to the robotics and VLA research community.
 
 ## 🚩 Plan
 
+- [x] Release paper.
 - [x] Release source code.
-- [x] Release LIBERO checkpoint.
-- [x] Release SimplerEnv checkpoint.
-- [x] Provide LIBERO, LIBERO-plus, and SimplerEnv evaluation recipes.
-- [ ] Add paper link and BibTeX after the camera-ready version is available.
+- [x] Release checkpoint.
 
 ## 🎫 License
 
@@ -232,4 +177,13 @@ This project is released under the [MIT License](LICENSE).
 
 ## 🖊️ Citation
 
-If you find ResVLA useful, please consider citing our work. The BibTeX entry will be added after the camera-ready paper is available.
+If you find ResVLA useful, please consider citing our work:
+
+```bibtex
+@article{zhong2026noise,
+  title={From Noise to Intent: Anchoring Generative VLA Policies with Residual Bridges},
+  author={Zhong, Yiming and He, Yaoyu and Yang, Zemin and Tian, Pengfei and Huang, Yifan and Huang, Qingqiu and Zhu, Xinge and Ma, Yuexin},
+  journal={arXiv preprint arXiv:2604.21391},
+  year={2026}
+}
+```
