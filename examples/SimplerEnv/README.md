@@ -7,7 +7,7 @@ The evaluation process consists of two main parts:
 1. Setting up the `simpler_env` environment and dependencies.  
 2. Running the evaluation by launching services in both `ResVLA` and `simpler_env` environments.  
 
-We have verified that this workflow runs successfully on both **NVIDIA A100** and **RTX 4090** GPUs.
+We have verified that this workflow runs successfully on both **NVIDIA H20** and **RTX 4090** GPUs.
 
 ## 📦 1. Environment Setup
 

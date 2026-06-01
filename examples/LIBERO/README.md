@@ -6,7 +6,7 @@ The evaluation process consists of two main parts:
 1. Setting up the `LIBERO` environment and dependencies.  
 2. Running the evaluation by launching services in both `resVLA` and `LIBERO` environments.  
 
-We have verified that this workflow runs successfully on both **NVIDIA A100** and **RTX 4090** GPUs.  
+We have verified that this workflow runs successfully on both **NVIDIA H20** and **RTX 4090** GPUs.  
 
 ---
 
