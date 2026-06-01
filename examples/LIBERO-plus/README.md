@@ -45,7 +45,10 @@ If your LIBERO-plus repository is not located at `../LIBERO-plus`, set:
 
 ```bash
 export LIBERO_HOME=/path/to/LIBERO-plus
+export LIBERO_CONFIG_PATH=${LIBERO_HOME}/config
 ```
+
+`LIBERO_CONFIG_PATH` should point to the directory that contains LIBERO-plus `config.yaml`. This avoids accidentally using an old `~/.libero/config.yaml` or a config file from another LIBERO installation.
 
 ## 3. Single-Suite Evaluation
 
@@ -64,6 +67,7 @@ Terminal 2, run LIBERO-plus evaluation:
 
 ```bash
 export LIBERO_HOME=${LIBERO_HOME:-../LIBERO-plus}
+export LIBERO_CONFIG_PATH=${LIBERO_CONFIG_PATH:-${LIBERO_HOME}/config}
 export LIBERO_Python=/path/to/libero-plus/python
 export RESVLA_CKPT=results/Checkpoints/resvla_libero_all_2B/checkpoints/resVLA_libero.pt
 bash examples/LIBERO-plus/eval_files/eval_libero_plus.sh
@@ -93,6 +97,7 @@ The automation script starts one policy server per suite and evaluates the origi
 
 ```bash
 export LIBERO_HOME=${LIBERO_HOME:-../LIBERO-plus}
+export LIBERO_CONFIG_PATH=${LIBERO_CONFIG_PATH:-${LIBERO_HOME}/config}
 export LIBERO_python=/path/to/libero-plus/python
 export resVLA_python=/path/to/resvla/python
 export RESVLA_CKPT=results/Checkpoints/resvla_libero_all_2B/checkpoints/resVLA_libero.pt

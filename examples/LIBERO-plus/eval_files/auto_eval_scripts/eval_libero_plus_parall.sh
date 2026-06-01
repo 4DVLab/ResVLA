@@ -8,7 +8,7 @@ export resVLA_python=${resVLA_python:-python} # Path to the Python environment
 # === End of environment variable configuration ===
 export PYTHONPATH=$PYTHONPATH:${LIBERO_HOME} # let eval_libero find the LIBERO tools
 export PYTHONPATH=$(pwd):${PYTHONPATH} # let LIBERO find the websocket tools from resVLA repo
-export LIBERO_CONFIG_PATH=${LIBERO_CONFIG_PATH:-${LIBERO_HOME}/config/}
+export LIBERO_CONFIG_PATH=${LIBERO_CONFIG_PATH:-${LIBERO_HOME}/config/} # Directory containing LIBERO-plus config.yaml
 ###########################################################################################
 export MUJOCO_GL=osmesa
 export PYOPENGL_PLATFORM=osmesa
