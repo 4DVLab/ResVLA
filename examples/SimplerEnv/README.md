@@ -1,5 +1,6 @@
-This document provides instructions for reproducing our **experimental results** with SimplerEnv.
+# SimplerEnv Evaluation and Training
 
+This document provides instructions for reproducing our **experimental results** with SimplerEnv.
 
 The evaluation process consists of two main parts:
 
@@ -75,7 +76,8 @@ SIMPLER_RENDER_DEVICE=auto
 Only set a machine-specific value such as `SIMPLER_RENDER_DEVICE=pci:34` when auto selection fails on your server.
 
 
-## 🔧 Verification Your SimplerEnv
+## 🔧 Verify SimplerEnv
+
 We provide a minimal environment verification script:
 
 ```bash
@@ -88,12 +90,12 @@ If you see the "✅ Env built successfully" message, it means SimplerEnv is inst
 ---
 
 
-## 🚀 2. Eval SimplerEnv
+## 🚀 2. Evaluate SimplerEnv
 
 Run evaluation **from the repository root**. The provided automation scripts coordinate both pieces of the workflow:
 
-- **resVLA environment**: runs the policy inference server.
-- **simpler_env environment**: runs the simulation eval code.
+- **ResVLA environment**: runs the policy inference server.
+- **simpler_env environment**: runs the simulation evaluation code.
 
 
 ### Step 0. Download ResVLA checkpoint
@@ -178,31 +180,39 @@ When running the policy server, if you see `NotImplementedError: Framework ResVL
 
 
 
-# 🚀 Training on OXE
+## 🚀 Training on OXE
 
-## Data Preparation
+### Data Preparation
 
 
 Steps:
-1) Download a LeRobot-format OXE dataset 
+1) Download the LeRobot-format OXE datasets:
 - [bridge_orig_lerobot](https://huggingface.co/datasets/IPEC-COMMUNITY/bridge_orig_lerobot)
 - [fractal20220817_data_lerobot](https://huggingface.co/datasets/IPEC-COMMUNITY/fractal20220817_data_lerobot)
 
-2) Including `modality.json` in each `*lerobot/meta/modality.json`
-- [bridge modality](./train_files/modality.json). Rename as modality.json and put it as `bridge_orig_lerobot/meta/modality.json`
-- [fractal modality](./train_files/fractal_modality.json). Rename as `modality.json` and put it as `fractal20220817_data_lerobot/meta/modality.json`
+The released data mixture expects the following local directory names:
+
+```text
+playground/Datasets/SimplerEnv/bridge_orig_1.0.0_lerobot
+playground/Datasets/SimplerEnv/fractal20220817_data_0.1.0_lerobot
+```
+
+2) Add `modality.json` to each dataset's `meta/` directory:
+- [bridge modality](./train_files/modality.json): save as `bridge_orig_1.0.0_lerobot/meta/modality.json`
+- [fractal modality](./train_files/fractal_modality.json): save as `fractal20220817_data_0.1.0_lerobot/meta/modality.json`
 
 3) Add your dataset path to `config.yaml`:
     ```yaml
     datasets:
       vla_data:
         dataset_py: lerobot_datasets
-        data_root_dir: playground/Datasets/OXE_LEROBOT_DATASET  # path to your dataset
+        data_root_dir: playground/Datasets/SimplerEnv  # path to your dataset root
         data_mix: simpler_env_all
     ```
 
 
-### Check Your Dataoader
+### Check Your Dataloader
+
 We provide a simple way to check your dataloader. Make sure you can load batched data:
 
 ```bash
