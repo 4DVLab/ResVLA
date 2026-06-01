@@ -1,5 +1,6 @@
 transformers==4.57.0
 accelerate==1.5.2
+torch==2.6.0
 tiktoken
 einops
 transformers_stream_generator==0.0.4

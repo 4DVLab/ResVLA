@@ -98,8 +98,18 @@ Run evaluation **from the repository root**. The provided automation scripts coo
 
 ### Step 0. Download ResVLA checkpoint
 
-1) Download the checkpoint: [resvla_simpler_env_2B](https://huggingface.co/GaussionZhong/resvla_simpler_env_2B)
+Download the checkpoint from [resvla_simpler_env_2B](https://huggingface.co/GaussionZhong/resvla_simpler_env_2B):
 
+```bash
+HF_XET_HIGH_PERFORMANCE=1 hf download GaussionZhong/resvla_simpler_env_2B \
+  --local-dir results/Checkpoints/resvla_simpler_env_2B
+```
+
+The default scripts expect:
+
+```text
+results/Checkpoints/resvla_simpler_env_2B/checkpoints/resVLA_simpler_env.pt
+```
 
 
 ### Step 1. Run evaluation scripts
@@ -188,7 +198,7 @@ Steps:
       vla_data:
         dataset_py: lerobot_datasets
         data_root_dir: playground/Datasets/OXE_LEROBOT_DATASET  # path to your dataset
-        data_mix: bridge_rt_1
+        data_mix: simpler_env_all
     ```
 
 

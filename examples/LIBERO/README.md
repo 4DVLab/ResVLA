@@ -35,7 +35,18 @@ The evaluation should be run **from the repository root** using **two separate t
 
 ### Step 0. Download ResVLA checkpoint
 
-1) Download the checkpoint: [resvla_libero_all_2B](https://huggingface.co/GaussionZhong/resvla_libero_all_2B)
+Download the checkpoint from [resvla_libero_all_2B](https://huggingface.co/GaussionZhong/resvla_libero_all_2B):
+
+```bash
+HF_XET_HIGH_PERFORMANCE=1 hf download GaussionZhong/resvla_libero_all_2B \
+  --local-dir results/Checkpoints/resvla_libero_all_2B
+```
+
+The default scripts expect:
+
+```text
+results/Checkpoints/resvla_libero_all_2B/checkpoints/resVLA_libero.pt
+```
 
 ### Step 1. Start the server (ResVLA environment)
 
