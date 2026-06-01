@@ -151,4 +151,4 @@ If the evaluator cannot import `libero`, check that `LIBERO_HOME` points to the 
 
 If assets are missing, verify that the LIBERO-plus assets were extracted to `../LIBERO-plus/libero/libero/assets`.
 
-If the policy server cannot load the checkpoint, first run the root README's installation verification command and confirm that `resVLA_libero.pt`, `config.yaml`, and `dataset_statistics.json` are all present in `results/Checkpoints/resvla_libero_all_2B`.
+If the policy server cannot load the checkpoint, confirm that `resVLA_libero.pt`, `config.yaml`, and `dataset_statistics.json` are all present in `results/Checkpoints/resvla_libero_all_2B`. You can also follow the LIBERO evaluation README to start the policy server and check whether the released checkpoint loads correctly.

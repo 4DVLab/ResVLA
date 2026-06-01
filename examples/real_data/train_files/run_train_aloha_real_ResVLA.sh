@@ -17,7 +17,7 @@ config_yaml=./examples/real_data/train_files/resvla_train_real_aloha.yaml
 libero_data_root=playground/Datasets/real_data
 data_mix=aloha_demo
 run_root_dir=./results/Checkpoints
-run_id=resvla_aloha_real_dual_demo_v14
+run_id=resvla_aloha_real_dual_demo
 anchor_train_noise_std=1.0
 resume=False
 
