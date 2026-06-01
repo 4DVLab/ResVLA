@@ -4,7 +4,7 @@
 
 ###########################################################################################
 # === Please modify the following paths according to your environment ===
-export LIBERO_HOME=../LIBERO-plus
+export LIBERO_HOME=${LIBERO_HOME:-../LIBERO-plus}
 export LIBERO_Python=${LIBERO_Python:-python}
 export PYTHONPATH=$PYTHONPATH:${LIBERO_HOME}
 export PYTHONPATH=$(pwd):${PYTHONPATH}

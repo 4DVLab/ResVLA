@@ -173,6 +173,7 @@ The released training scripts are multi-GPU recipes. Adjust `CUDA_VISIBLE_DEVICE
 ## Evaluation
 
 - LIBERO: see [examples/LIBERO/README.md](examples/LIBERO/README.md)
+- LIBERO-plus: see [examples/LIBERO-plus/README.md](examples/LIBERO-plus/README.md)
 - SimplerEnv: see [examples/SimplerEnv/README.md](examples/SimplerEnv/README.md)
 
 Both evaluation workflows use the same policy server tested above, then run the simulator-side evaluation in a separate environment.
