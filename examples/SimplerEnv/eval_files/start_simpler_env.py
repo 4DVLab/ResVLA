@@ -37,7 +37,7 @@ if __name__ == "__main__":
     os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
     configure_video_writer()
 
-    if os.getenv("DEBUG", False):
+    if os.getenv("DEBUG", "").lower() in {"1", "true", "yes", "on"}:
         start_debugpy_once()
     model = ModelClient(
         policy_ckpt_path=args.ckpt_path, # to get unnormalization stats

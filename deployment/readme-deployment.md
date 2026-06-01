@@ -11,7 +11,7 @@ python -m deployment.model_server.server_policy \
     --use_bf16
 ```
 
-## Smoke Test
+## Connection Verification
 
 ```bash
 python -m deployment.model_server.tools.debug_server_policy \

@@ -1,5 +1,5 @@
 """
-Debug / smoke-test client for deployment/model_server/server_policy.py.
+Debug / verification client for deployment/model_server/server_policy.py.
 
 Purpose:
   - Establish a WebSocket connection to the policy server.
@@ -23,7 +23,7 @@ from deployment.model_server.tools.websocket_policy_client import WebsocketClien
 
 
 def _build_argparser() -> argparse.ArgumentParser:
-    ap = argparse.ArgumentParser(description="WebSocket policy client smoke test (msgpack protocol)")
+    ap = argparse.ArgumentParser(description="WebSocket policy client verification (msgpack protocol)")
     ap.add_argument("--host", default="127.0.0.1", help="server hostname/IP (do not use 0.0.0.0)")
     ap.add_argument("--port", type=int, default=10093, help="server port")
     ap.add_argument("--api_key", default="", help="optional: API key for authentication")
@@ -41,7 +41,7 @@ def _main():
     client = WebsocketClientPolicy(host=args.host, port=args.port, api_key=(args.api_key or None))
     logging.info("Connected. Server metadata: %s", client.get_server_metadata())
 
-    ping_ret = client.predict_action({"type": "ping", "request_id": "smoke-test-ping"})
+    ping_ret = client.predict_action({"type": "ping", "request_id": "verification-ping"})
     logging.info("Ping resp: %s", ping_ret)
 
     if args.test == "infer":
@@ -51,7 +51,7 @@ def _main():
 
             request = {
                 "type": "infer",
-                "request_id": "smoke-test",
+                "request_id": "verification",
                 "payload": {
                     "examples": [
                         {
@@ -68,7 +68,7 @@ def _main():
             logging.error("Infer error (this still proves transport OK): %s", e)
 
     client.close()
-    logging.info("Smoke test done.")
+    logging.info("Verification done.")
 
 
 if __name__ == "__main__":

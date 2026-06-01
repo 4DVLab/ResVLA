@@ -88,7 +88,7 @@ results/Checkpoints/resvla_simpler_env_2B/checkpoints/resVLA_simpler_env.pt
 
 If you store `Qwen3-VL-2B-Instruct` somewhere else, update `framework.qwenvl.base_vlm` in the checkpoint `config.yaml` or in your training config.
 
-## Smoke Tests
+## Installation Verification
 
 Run these before installing LIBERO or SimplerEnv simulators. They verify that the environment, base VLM, checkpoint files, model loading, and websocket policy server are working.
 
@@ -128,7 +128,7 @@ python -m deployment.model_server.tools.debug_server_policy \
   --test infer
 ```
 
-A successful smoke test returns `status: ok` and a `normalized_actions` array with shape `(1, 8, 7)` for the LIBERO checkpoint.
+A successful verification returns `status: ok` and a `normalized_actions` array with shape `(1, 8, 7)` for the LIBERO checkpoint.
 
 ## Training
 
