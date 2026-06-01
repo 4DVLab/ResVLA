@@ -1,0 +1,10 @@
+**/__pycache__
+/.vscode/
+*.log
+/results
+/checkpoints
+/playground
+
+resVLA.egg-info/
+
+MUJUCO_LOG.TXT
