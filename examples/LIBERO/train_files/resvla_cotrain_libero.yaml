@@ -39,7 +39,7 @@ framework:
     diffusion_model_cfg:    # DiT transformer parameters
       attention_head_dim: 64
       cross_attention_dim: 2048 # VLM hidden dimension
-      dropout: 0.2
+      dropout: 0.1
       final_dropout: true
       interleave_self_attention: true
       norm_type: "ada_norm"
